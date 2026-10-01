@@ -1,0 +1,100 @@
+/* The styles are supposed to be separated according to the specific pages but for this site it is not much so I just put all here */
+/* ----- colors ----- */
+/* variables so dark mode is easy: we just change the values */
+.app {
+  --bg: #fffdf5;
+  --card: #ffffff;
+  --text: #222222;
+  --border: #dddddd;
+  --green: #006b3f;
+  --gold: #fcd116;
+  --red: #ce1126;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* when the app has the class "dark" these colors are used */
+.app.dark {
+  --bg: #111611;
+  --card: #1b221b;
+  --text: #f2f2f2;
+  --border: #333333;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { text-decoration: none; color: inherit; }
+h1, h2, h3 { margin-top: 0; }
+
+/* ----- navbar ----- */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 30px;
+  background: var(--card);
+  border-bottom: 4px solid var(--gold);
+}
+.logo { font-size: 22px; font-weight: bold; color: var(--green); margin-right: auto; }
+.app.dark .logo { color: var(--gold); }
+.links { display: flex; gap: 20px; }
+.links a.active { color: var(--red); font-weight: bold; } /* NavLink adds "active" to the current page */
+.small-btn { padding: 6px 12px; border: 1px solid var(--border); background: none; color: var(--text); border-radius: 5px; cursor: pointer; }
+.menu-btn { display: none; }
+
+/* ----- general layout ----- */
+.section { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+.hero { background: var(--green); color: white; padding: 50px 30px; text-align: center; }
+.btn { background: var(--gold); color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; display: inline-block; font-size: 16px; }
+.dark-btn { background: black; color: white; }
+.cta { background: var(--gold); color: black; padding: 30px; border-radius: 8px; text-align: center; }
+
+/* ----- cards ----- */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.card-info { padding: 15px; }
+.card-top { height: 90px; padding: 10px; color: white; font-weight: bold; display: flex; align-items: flex-end; }
+.small { font-size: 14px; opacity: 0.7; }
+.price { color: var(--green); font-weight: bold; }
+.app.dark .price { color: var(--gold); }
+
+/* a color for each category (the class comes from EventCard) */
+.Music { background: var(--red); }
+.Culture { background: black; color: var(--gold); }
+.Tech { background: var(--green); }
+.Food { background: var(--gold); color: black; }
+.Sports { background: #8a6a00; }
+
+/* ----- events page ----- */
+input, textarea { width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid var(--border); border-radius: 5px; background: var(--card); color: var(--text); font-size: 16px; }
+.buttons { margin-bottom: 20px; }
+.chip { padding: 6px 15px; margin-right: 8px; margin-bottom: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 20px; cursor: pointer; }
+.chip.active { background: var(--green); color: white; }
+
+/* ----- about page ----- */
+.team { display: flex; gap: 30px; }
+.member { text-align: center; }
+.avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--green); color: white; font-size: 24px; line-height: 60px; margin: 0 auto; }
+
+/* ----- contact page ----- */
+.contact { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
+.error { color: var(--red); }
+.success { color: var(--green); font-weight: bold; }
+
+/* ----- footer ----- */
+.footer { background: black; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+.footer p { margin: 0; }
+
+/* ----- mobile ----- */
+/* these only work on screens smaller than 700px */
+@media (max-width: 700px) {
+  .navbar { flex-wrap: wrap; padding: 15px; }
+  .menu-btn { display: block; }
+  .links { display: none; flex-direction: column; width: 100%; order: 5; }
+  .links.open { display: flex; }
+  .grid { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .team { flex-direction: column; }
+}
