@@ -13,6 +13,10 @@
   color: var(--text);
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
 
 /* when the app has the class "dark" these colors are used */
@@ -85,7 +89,7 @@ input, textarea { width: 100%; padding: 10px; margin-bottom: 12px; border: 1px s
 
 /* ----- footer ----- */
 .footer { background: black; color: white; text-align: center; padding: 15px; margin-top: 40px; }
-.footer p { margin: 0; }
+.footer p { margin-top: auto; }
 
 /* ----- mobile ----- */
 /* these only work on screens smaller than 700px */
