@@ -1,11 +1,7 @@
-# Ghana Events
+# Ghana Events App
 
 A React website with 4 pages: Home, Events, About and Contact.
 
-## How to run
-1. Install Node.js
-2. Run `npm install`
-3. Run `npm run dev` and open the link it shows
 
 ## Folders
 - `src/pages` - the 4 pages
